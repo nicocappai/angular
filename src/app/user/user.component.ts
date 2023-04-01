@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { User } from './../classes/user';
+import { User } from '../classes/User';
+import { faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'tr[app-user]',
@@ -14,7 +17,9 @@ export class UserComponent implements OnInit {
   @Output('onDeleteUser') onDeletedUser = new EventEmitter();
   @Output('onSelectUser') onSelectUser =  new EventEmitter();
 
-  constructor(private UserService: UserService){
+  faPen = faPencilAlt;
+  faTrash = faTrash;
+  constructor(private UserService: UserService, private route: Router){
   }
 
   ngOnInit(){
@@ -26,6 +31,7 @@ export class UserComponent implements OnInit {
   }
 
   updateUser(){
+    this.route.navigateByUrl('/users' + this.user?.id + '/edit')
     this.onSelectUser.emit(this.user);
   }
 }

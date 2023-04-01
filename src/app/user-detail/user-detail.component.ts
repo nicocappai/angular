@@ -1,15 +1,16 @@
-import { Component, Input } from '@angular/core';
-import { User } from '../classes/user';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from './../services/user.service';
+import { User } from '../classes/User';
 
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.css']
 })
-export class UserDetailComponent {
-  private userCopy: User = new User;
-  private __user: User = new User;
+export class UserDetailComponent implements OnInit {
+  private userCopy: User;
+  private __user: User;
   
   @Input() set user(user: User){
     this.__user = user;
@@ -19,7 +20,20 @@ export class UserDetailComponent {
     return this.__user;
   }
   
-  constructor( private userService: UserService) {
+  constructor( private userService: UserService, private route: ActivatedRoute, private router: Router) {
+    this.user = new User();
+    this.__user = new User();
+    this.userCopy = new User();
+  }
+
+  ngOnInit(): void {
+     this.route.params.subscribe(param => {
+      const id = Number(param['id']);
+      const user = this.userService.getUser(id);
+      if (user){
+        this.user = user;
+      }
+     })
   }
 
   saveUser(){

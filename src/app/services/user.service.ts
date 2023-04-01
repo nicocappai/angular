@@ -1,12 +1,16 @@
 import { Injectable } from "@angular/core"
-import { User } from '../classes/user';
+import { User } from '../classes/User';
+
 import { UserInterface } from './../interfaces/user';
+
 
 @Injectable({
     providedIn: 'root'
 }   
 )
+
 export class UserService {
+ 
     users: User[] = [
         {
             id: 1,
@@ -50,9 +54,13 @@ export class UserService {
         }
     ];
 
-getUsers() {
+getUsers(): User[] {
     return this.users;
  }
+
+getUser(id: number): User | undefined {
+    return this.users.find(user => user.id === id);
+  }
 
 deleteUser(user: User){
  const index = this.users.indexOf(user);
