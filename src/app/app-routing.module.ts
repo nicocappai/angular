@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserService } from './services/user.service';
 import { CommonModule } from '@angular/common';
+import { UserDataComponent } from './user-data/user-data.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'users/:id/edit',
     component: UserDetailComponent
+  },
+  {
+    path: 'users/:id',
+    component: UserDataComponent
   }
 ];
 

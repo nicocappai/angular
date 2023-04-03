@@ -29,8 +29,15 @@
         <label class="form-label" for="age">Age</label>
         <input class="form-control" [(ngModel)]="user.age" type="number" name="age" id="age">
     </div>
-    <div class="form-footer">
-        <button class="btn btn-outline-secondary" (click)="resetForm(f.form)">RESET</button>
-        <button class="btn btn-success" (click)="saveUser()">SAVE</button>
+    <div class="form-footer form-group row m-2">
+        <div class="col-4 d-flex justify-content-center">
+             <a class="btn btn-lg btn-primary" [routerLink]="['/users']">BACK TO USERS</a>
+        </div>
+       <div class="col-4 d-flex justify-content-center">
+            <a class="btn btn-lg btn-outline-secondary" (click)="resetForm(f.form)">RESET</a>
+       </div>
+        <div class="col-4 d-flex justify-content-center">
+            <a class="btn btn-lg btn-success" (click)="saveUser()">SAVE</a>
+        </div>
     </div>
 </form>

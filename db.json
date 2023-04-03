@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Nico1",
+      "lastname": "Cappai",
+      "email": "nico@esempio.it",
+      "fiscalcode": "CPPNCI56H09F809G",
+      "province": "Cagliari",
+      "phone": "859849585",
+      "age": 27
+    },
+    {
+      "id": 2,
+      "name": "Nico2",
+      "lastname": "Cappai",
+      "email": "nico@esempio.it",
+      "fiscalcode": "CPPNCI56H09F809G",
+      "province": "Cagliari",
+      "phone": "859849585",
+      "age": 27
+    },
+    {
+      "id": 3,
+      "name": "Nico3",
+      "lastname": "Cappai",
+      "email": "nico@esempio.it",
+      "fiscalcode": "CPPNCI56H09F809G",
+      "province": "Cagliari",
+      "phone": "859849585",
+      "age": 27
+    },
+    {
+      "id": 4,
+      "name": "Nico4",
+      "lastname": "Cappai",
+      "email": "nico@esempio.it",
+      "fiscalcode": "CPPNCI56H09F809G",
+      "province": "Cagliari",
+      "phone": "859849585",
+      "age": 27
+    }
+  ]
+}

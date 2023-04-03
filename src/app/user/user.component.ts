@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../classes/User';
-import { faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPencilAlt, faTrash, faInfo } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 
@@ -19,6 +19,7 @@ export class UserComponent implements OnInit {
 
   faPen = faPencilAlt;
   faTrash = faTrash;
+  faInfo = faInfo;
   constructor(private UserService: UserService, private route: Router){
   }
 
@@ -31,7 +32,7 @@ export class UserComponent implements OnInit {
   }
 
   updateUser(){
-    this.route.navigateByUrl('/users' + this.user?.id + '/edit')
-    this.onSelectUser.emit(this.user);
+    this.route.navigate(['users' , this.user?.id , 'edit']);
+    // this.onSelectUser.emit(this.user);
   }
 }
